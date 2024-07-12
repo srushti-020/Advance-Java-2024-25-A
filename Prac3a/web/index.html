@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Practical 3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>File Upload Application</h1>
+        <form action="fileUploadServlet" method="post" enctype="multipart/form-data">
+            Select file to upload: <input type="file" name="myFile"> <br><br>
+            Destination: <input type="text" name="destination">  <br><br>
+            <input type="submit" value="Upload file">  <br><br>
+        </form>
+        
+        <h1>Download file application</h1>
+        Click <a href="fileDownloadServlet?filename=GISPRAC036.pdf">TY Syllabus</a> <br><br>
+        Click <a href="fileDownloadServlet?filename=se outputs.pdf">University Site </a>
+            
+        
+    </body>
+</html>
