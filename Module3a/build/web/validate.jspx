@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : validate
+    Created on : 24 Jul, 2024, 12:48:36 PM
+    Author     : Admin
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8" import="mypack.Checker"/>
+    
+    <!-- any content can be specified here, e.g.: -->
+    <jsp:element name="text">
+        <jsp:attribute name="lang">EN</jsp:attribute>
+        <jsp:body>Validation Page!</jsp:body>
+
+            <jsp:useBean id="obj" scope="request" class="mypack.Checker">
+                <jsp:setProperty name="obj" property="*" />
+
+                <jsp:scriptlet>
+                    if (obj.validate()) {
+                </jsp:scriptlet>           
+                <jsp:forward page="successful.jsp"/>
+
+                <jsp:scriptlet>
+                    } else {
+                </jsp:scriptlet>
+                <jsp:include page="index.html" />
+
+                <jsp:scriptlet>
+                    }
+                </jsp:scriptlet>
+
+                <jsp:expression>obj.getError()</jsp:expression>
+            </jsp:useBean>
+    </jsp:element>
+
+</jsp:root>
